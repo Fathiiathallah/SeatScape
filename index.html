@@ -21,6 +21,13 @@
                 <img src="images/Logo.png" class="img-class" style="height: 45px; width: auto;">
             </div>
 
+            <!-- HAMBURGER (TAMBAHKAN INI) -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <!-- Search and Nav Links -->
             <div class="nav-wrapper">
                 <!-- Search Bar -->
@@ -57,7 +64,7 @@
 <section class="features">
     <div class="features-container">
         <div class="features-title">
-            <h2>Why<br>Choose<br>AdoreU<br>Space?</h2>
+            <h2>Why Choose AdoreU Space?</h2>
         </div>
         <div class="features-grid">
             <!-- Card 1 -->
@@ -297,5 +304,11 @@
             <p>© 2026 AdoreU Space Powered by Seatscape. All Rights Reserved</p>
         </div>
     </footer>
+
+    <script>
+    function toggleMenu() {
+        document.querySelector('.nav-wrapper').classList.toggle('active');
+    }
+</script>
 </body>
 </html>
