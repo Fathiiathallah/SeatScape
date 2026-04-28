@@ -689,7 +689,7 @@
 /* --- REVIEWS SECTION WITH BACKGROUND --- */
 .reviews-section {
     position: relative;
-    background: url('../image/BG-review.jpeg') center/cover no-repeat;
+    background: url('../images/BG-review.jpeg') center/cover no-repeat;
     padding: 0;
     overflow: hidden;
 }
