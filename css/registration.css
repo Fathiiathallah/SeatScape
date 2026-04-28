@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: url("images/background login&register.jpeg") no-repeat center center/cover;
+  background: url("../images/background login&register.jpeg") no-repeat center center/cover;
 }
 
 /* WRAPPER */
