@@ -327,49 +327,39 @@
     color: #ffffff;
 }
 
-/* --- MEDIA QUERIES (RESPONSIF) --- */
-@media (max-width: 992px) {
-    .features-container {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 768px) {
+
+    .header {
+        padding: 10px;
     }
-    .features-title h2 br {
-        display: none; /* Hilangkan baris baru pada judul di mobile agar hemat tempat */
+
+    .header-container {
+        flex-direction: row; /* tetap horizontal */
+        justify-content: space-between;
     }
-}
 
-@media (max-width: 600px) {
-    .features-grid {
-        grid-template-columns: 1fr; /* 1 kolom saja di HP */
+    .nav-wrapper {
+        flex-direction: row;
+        gap: 10px;
     }
-}
 
-/* --- LIVE STATUS MAIN SECTION --- */
-.live-status-section {
-    background-color: #614636;
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
-}
+    .nav-links {
+        flex-direction: row;
+        gap: 15px;
+        font-size: 14px;
+    }
 
-.status-main-container {
-    max-width: 1100px;
-    width: 100%;
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap; /* Agar responsif di mobile */
-    align-items: stretch;
-}
+    .search-input {
+        width: 120px;
+        font-size: 12px;
+        padding: 5px 10px 5px 30px;
+    }
 
-.status-column {
-    background-color: #F5F5DC;
-    padding: 30px;
-    border-radius: 20px;
-    flex: 1;
-    min-width: 450px; /* Menjaga ukuran minimal di desktop */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
+    .user-icon a {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
 }
 
 /* --- ENHANCED LIVE VIEWING --- */
