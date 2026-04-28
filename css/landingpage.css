@@ -204,7 +204,7 @@
 .hero {
     margin-top: 60px; /* Ruang untuk navbar */
     height: 80vh; /* 80% dari tinggi layar */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Images/bg\ landing\ page.jpeg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/bg\ landing\ page.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
