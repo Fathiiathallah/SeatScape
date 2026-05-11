@@ -159,6 +159,16 @@
             <button type="button" class="btn-done" onclick="confirmSeat()">Done</button>
         </div>
     </div>
+    <!-- ================= MODAL POP-UP: CLOSED DATE ================= -->
+     <div class="modal-overlay" id="closedModal">
+        <div class="closed-modal">
+            <div class="closed-icon">
+                <img src="./images/Logo.png" alt="Closed Icon" class="custom-logo">
+            </div>
+            <h3>Sorry, the cafe is closed on this date.<br>Please choose another date.</h3>
+            <button type="button" class="btn-oke" onclick="closeClosedModal()">Oke</button>
+        </div>
+    </div>
 
     <!-- Script Logika -->
     <script>
@@ -273,6 +283,29 @@
             if (event.target == modal) {
                 closeSeatModal();
             }
+        }
+
+        // --- LOGIKA UNTUK TANGGAL LIBUR CAFE ---
+        document.addEventListener("DOMContentLoaded", () => {
+            // Ambil semua tombol tanggal
+            const dateRadios = document.querySelectorAll('input[name="res-date"]');
+            
+            dateRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Misalnya cafe libur di tanggal 11 (bisa kamu tambah tanggal lain)
+                    if (this.value === "11") {
+                        // Munculkan Pop-up
+                        document.getElementById('closedModal').style.display = 'flex';
+                        // Batalkan/Uncheck pilihan tanggal tersebut agar user harus milih yang lain
+                        this.checked = false;
+                    }
+                });
+            });
+        });
+
+        // Fungsi untuk menutup pop-up "Oke"
+        function closeClosedModal() {
+            document.getElementById('closedModal').style.display = 'none';
         }
     </script>
 </body>
