@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Menu - AdoreU Space</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Link ke CSS Pre-order -->
+    <link rel="stylesheet" href="./css/order_menu.css">
+</head>
+<body>
+
+    <!-- ================= HEADER (Desain Glassmorphism Baru) ================= -->
+    <header class="menu-top-header">
+        <a href="reservation.html" class="back-button" aria-label="Go back to reservation">
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+        <h1 class="menu-top-title">Choose Menu</h1>
+    </header>
+
+    <!-- ================= MAIN MENU CONTENT ================= -->
+    <main class="menu-page-container">
+        
+        <!-- ================= COFFEE SERIES ================= -->
+        <section class="menu-category-section">
+            <h2 class="category-title">Coffee Series</h2>
+            
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/ice dalgona.jpeg" alt="Iced Dalgona" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Iced Dalgona</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 27,000</p>
+                    </div>
+                    <!-- Tombol Add -->
+                    <button class="btn-add" onclick="addItem(this, 27000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/adore latte.jpeg" alt="Adore Latte" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Adore Latte</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 25,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 25000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/chocoffee.jpeg" alt="Creamy ChoCoffee" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Creamy ChoCoffee</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 29,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 29000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Tiramisu Latte.jpeg" alt="Tiramisu Latte" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Tiramisu Latte</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 30,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 30000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/orange americano.jpeg" alt="Orange Americano" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Orange Americano</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 23,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 23000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Pumpkin Spice Latte.jpeg" alt="Pumpkin Spice Latte" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Pumpkin Spice Latte</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 30,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 30000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= NON-COFFEE ================= -->
+        <section class="menu-category-section">
+            <h2 class="category-title">Non-Coffee</h2>
+            
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/matchadore milk.jpeg" alt="Matchadore Milk" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Matchadore Milk</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 27,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 27000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/cocoa atelier.jpeg" alt="Cocoa Atelier" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Cocoa Atelier</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 28,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 28000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/berry Cloud.jpeg" alt="Berry Cloud Cup" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Berry Cloud Cup</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 26,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 26000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/choco marshmallow.jpeg" alt="Adore de Rêve" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Adore de Rêve</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 29,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 29000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/le jardin doux.jpeg" alt="Le Jardin Doux" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Le Jardin Doux</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 30,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 30000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/reveluv choco.jpeg" alt="Reveluv Chocodore" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Reveluv Chocodore</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 30,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 30000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= TEA SERIES ================= -->
+        <section class="menu-category-section">
+            <h2 class="category-title">Tea Series</h2>
+            
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Black tea.jpeg" alt="Adore Black Tea" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Adore Black Tea</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 20,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 20000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Chamomile Tea.jpeg" alt="Adore Chamomile Tea" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Adore Chamomile Tea</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 24,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 24000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Lemon Ginger Tea.jpeg" alt="Lemon Ginger Tea" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Lemon Ginger Tea</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 22,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 22000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Apple cider tea.jpeg" alt="Apple Cider Tea" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Apple Cider Tea</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 25,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 25000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Rose Black Tea.jpeg" alt="Rosie Black Tea" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Rosie Black Tea</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 24,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 24000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= DESSERT ================= -->
+        <section class="menu-category-section">
+            <h2 class="category-title">Dessert</h2>
+            
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Cherry Nova Cake.jpeg" alt="Cherry Nova Cake" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Cherry Nova Cake</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 28,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 28000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/BLuebel cake.jpeg" alt="BlueBel Cake" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">BlueBel Cake</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 29,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 29000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/matchadore.jpeg" alt="MatchAdore Cake" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">MatchAdore Cake</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 27,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 27000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Choco cookies roll.jpeg" alt="Choco Cookies Roll" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Choco Cookies Roll</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 29,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 29000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Choco Cannelle.jpeg" alt="Choco Canelle" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Choco Canelle</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 29,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 29000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+                <article class="menu-card">
+                    <div class="menu-img-wrapper"><img class="menu-img" src="./images/Bouidoir Crepe.jpeg" alt="Bouidoir Crepe" loading="lazy"></div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Bouidoir Crepe</h3>
+                        <p class="menu-desc">Handmade with love</p>
+                        <p class="menu-price">Rp. 29,000</p>
+                    </div>
+                    <button class="btn-add" onclick="addItem(this, 29000)"><i class="fa-solid fa-plus"></i> add</button>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= BOTTOM CART BAR ================= -->
+    <div class="bottom-cart-bar">
+        <div class="cart-info">
+            <span id="item-count">0</span> Items | Total Rp. <span id="total-price">0</span>
+        </div>
+        <button class="btn-confirm-order" onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <!-- NOTIFIKASI CUSTOM JIKA ORDER KOSONG -->
+    <div id="toast-notification" class="toast">Please select at least 1 menu!</div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        let itemsCount = 0;
+        let totalPrice = 0;
+
+        function addItem(button, price) {
+            // Cek apakah item ini sudah ditambahkan (memiliki class 'is-added')
+            if (button.classList.contains('is-added')) {
+                // LOGIKA BATALKAN (REMOVE)
+                itemsCount--;
+                totalPrice -= price;
+                
+                // Kembalikan tampilan tombol ke semula
+                button.innerHTML = '<i class="fa-solid fa-plus"></i> add';
+                button.classList.remove('is-added');
+            } else {
+                // LOGIKA TAMBAH (ADD)
+                itemsCount++;
+                totalPrice += price;
+                
+                // Ubah tampilan tombol menjadi tombol hapus
+                button.innerHTML = '<i class="fa-solid fa-minus"></i> remove';
+                button.classList.add('is-added');
+            }
+            
+            // Update teks di Bottom Bar (Format Ribuan)
+            document.getElementById('item-count').innerText = itemsCount;
+            document.getElementById('total-price').innerText = totalPrice.toLocaleString('en-US');
+        }
+
+        function confirmOrder() {
+            if(itemsCount === 0) {
+                // Tampilkan pesan jika belum ada pesanan
+                showToast();
+                return;
+            }
+            
+            // Di sistem nyata, data pesanan bisa disimpan ke Session/Local Storage di sini
+            sessionStorage.setItem('preorderTotal', totalPrice);
+            sessionStorage.setItem('preorderItems', itemsCount);
+
+            // Redirect kembali ke halaman reservasi
+            window.location.href = 'reservation.html';
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast-notification");
+            toast.classList.add("show");
+            setTimeout(function(){ toast.classList.remove("show"); }, 3000);
+        }
+    </script>
+</body>
+</html>
