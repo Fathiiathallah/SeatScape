@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - AdoreU Space</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Link ke CSS Reservasi -->
+    <link rel="stylesheet" href="./css/reservation.css">
+</head>
+<body>
+
+
+     <!-- Header Khusus Halaman Menu -->
+    <header class="menu-top-header">
+        <a href="index.html" class="back-button" aria-label="Go back to home">
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+        <h1 class="menu-top-title">Reservation</h1>
+    </header>
+
+    <!-- ================= MAIN BACKGROUND FULL SCREEN ================= -->
+    <div class="reservation-page-bg">
+        <main class="reservation-content">
+            
+            <!-- KARTU UTAMA GLASSMORPHISM (MELEBAR KE SAMPING) -->
+            <form action="#" method="POST" id="reservationForm" class="reservation-card">
+                
+                <!-- KOLOM KIRI: SCHEDULE -->
+                <div class="form-column">
+                    <h2 class="section-title">1. Arrival Schedule</h2>
+                    
+                    <div class="schedule-wrapper">
+                        <!-- Calendar Box -->
+                        <div class="calendar-box">
+                            <div class="month-navigator">
+                                <i class="fa-solid fa-angle-left"></i>
+                                <span>May 2026</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            <div class="calendar-grid">
+                                <div></div><div></div><div></div> <!-- Offset Hari -->
+                                <label class="date-item"><input type="radio" name="res-date" value="1"><span>1</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="2"><span>2</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="3"><span>3</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="4"><span>4</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="5"><span>5</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="6"><span>6</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="7"><span>7</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="8"><span>8</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="9"><span>9</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="10"><span>10</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="11"><span>11</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="12"><span>12</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="13"><span>13</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="14"><span>14</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="15"><span>15</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="16"><span>16</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="17"><span>17</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="18"><span>18</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="19"><span>19</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="20"><span>20</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="21"><span>21</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="22"><span>22</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="23"><span>23</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="24"><span>24</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="25"><span>25</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="26"><span>26</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="27"><span>27</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="28"><span>28</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="29"><span>29</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="30"><span>30</span></label>
+                                <label class="date-item"><input type="radio" name="res-date" value="31"><span>31</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Time Slots -->
+                        <div class="time-grid">
+                            <label class="time-item"><input type="radio" name="res-time" value="09.00"><span>09.00</span></label>
+                            <label class="time-item"><input type="radio" name="res-time" value="11.00"><span>11.00</span></label>
+                            <label class="time-item"><input type="radio" name="res-time" value="13.00"><span>13.00</span></label>
+                            <label class="time-item"><input type="radio" name="res-time" value="17.00"><span>17.00</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider Tengah -->
+                <div class="card-divider"></div>
+
+                <!-- KOLOM KANAN: DETAILS -->
+                <div class="form-column form-right">
+                    <h2 class="section-title">2. Reservation Detail</h2>
+                    
+                    <button type="button" class="btn-action" onclick="window.location.href='order_menu.html'">
+                        <i class="fa-solid fa-utensils"></i> Pre-order Menu
+                    </button>
+                    
+                    <button type="button" class="btn-action" id="btn-select-seat" onclick="openSeatModal()">
+                        <i class="fa-solid fa-chair"></i> Select a seat
+                    </button>
+
+                    <textarea class="notes-area" id="additional-notes" name="additional-notes" placeholder="Additional Notes (e.g., Near window, need power outlet)"></textarea>
+
+                    <button type="submit" class="btn-confirm">Confirm Reservation</button>
+                </div>
+                
+            </form>
+        </main>
+    </div>
+
+    <!-- ================= MODAL POP-UP: CHOOSE SEAT ================= -->
+    <div class="modal-overlay" id="seatModal">
+        <div class="seat-modal">
+            <div class="modal-header">
+                <i class="fa-solid fa-angle-left" onclick="closeSeatModal()"></i>
+                <h2>Choose seat</h2>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item"><div class="box"></div> Available</div>
+                <div class="legend-item"><div class="box filled"></div> Filled</div>
+                <div class="legend-item"><div class="box chosen"></div> Chosen</div>
+            </div>
+
+            <div class="seat-map-container">
+                <div class="seat-row">
+                    <label class="table-label"><input type="radio" name="seat" value="Table A1"><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                    <label class="table-label"><input type="radio" name="seat" value="Table A2"><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                    <label class="table-label"><input type="radio" name="seat" value="Table A3"><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                </div>
+                <div class="seat-row">
+                    <label class="table-label"><input type="radio" name="seat" value="Table B1"><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                    <label class="table-label"><input type="radio" name="seat" value="Table B2"><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                </div>
+                <div class="seat-row">
+                    <label class="table-label"><input type="radio" name="seat" value="Table C1"><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                </div>
+                <div class="seat-row">
+                    <label class="table-label filled"><input type="radio" name="seat" value="Table D1" disabled><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                    <label class="table-label filled"><input type="radio" name="seat" value="Table D2" disabled><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                </div>
+                <div class="seat-row">
+                    <label class="table-label filled"><input type="radio" name="seat" value="Table E1" disabled><div class="table-shape"><span class="chair top"></span><span class="chair bottom"></span><span class="chair left"></span><span class="chair right"></span></div></label>
+                </div>
+            </div>
+
+            <button type="button" class="btn-done" onclick="confirmSeat()">Done</button>
+        </div>
+    </div>
+
+    <!-- Script Logika -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-wrapper').classList.toggle('active');
+        }
+
+        const modal = document.getElementById('seatModal');
+
+        function openSeatModal() {
+            modal.style.display = 'flex';
+        }
+
+        function closeSeatModal() {
+            modal.style.display = 'none';
+        }
+
+        function confirmSeat() {
+            const selectedSeat = document.querySelector('input[name="seat"]:checked');
+            const btnSelect = document.getElementById('btn-select-seat');
+            
+            if (selectedSeat) {
+                btnSelect.innerHTML = '<i class="fa-solid fa-check"></i> Seat: ' + selectedSeat.value;
+                btnSelect.classList.add('selected');
+            }
+            closeSeatModal(); 
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeSeatModal();
+            }
+        }
+    </script>
+</body>
+</html>
