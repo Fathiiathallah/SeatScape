@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Summary</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Roboto', sans-serif;
+      background:#7b563d;
+      min-height:100vh;
+      padding:30px 15px;
+      color:#333;
+    }
+
+    .booking-wrapper{
+      max-width:900px;
+      margin:auto;
+      background:#8d6b52;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 12px 32px rgba(0,0,0,0.18);
+    }
+
+    .header{
+      padding:24px 28px;
+      border-bottom:1px solid rgba(255,255,255,0.15);
+      display:flex;
+      align-items:center;
+      gap:16px;
+      color:white;
+    }
+
+    .back-button{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.15);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .back-button:hover{
+      background:rgba(255,255,255,0.25);
+    }
+
+    .header-title{
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      padding:28px;
+    }
+
+    .card{
+      background:#a99689;
+      border-radius:18px;
+      padding:20px;
+    }
+
+    .section-title{
+      color:white;
+      font-size:24px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+
+    .user-card{
+      background:#ece8d6;
+      border-radius:16px;
+      padding:14px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      box-shadow:0 5px 14px rgba(0,0,0,0.12);
+      margin-bottom:20px;
+    }
+
+    .user-icon{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      background:#d8cfbb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      color:#7b563d;
+      flex-shrink:0;
+    }
+
+    .user-name{
+      font-size:18px;
+      font-weight:700;
+      color:#7b563d;
+    }
+
+    .user-email{
+      margin-top:4px;
+      font-size:13px;
+      color:#777;
+      word-break:break-word;
+    }
+
+    .reservation-box{
+      background:#ece8d6;
+      border-radius:12px;
+      padding:18px;
+      min-height:220px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .reservation-item{
+      margin-bottom:14px;
+      line-height:1.6;
+      color:#7b563d;
+      font-size:15px;
+    }
+
+    .reservation-item span{
+      font-weight:700;
+    }
+
+    .notes-box{
+      background:white;
+      border-radius:10px;
+      padding:12px;
+      min-height:70px;
+      margin-top:8px;
+      color:#777;
+      border:1px solid #ddd;
+    }
+
+    .preorder-box{
+      background:#ece8d6;
+      border-radius:12px;
+      padding:16px;
+      min-height:300px;
+      color:#777;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .footer{
+      margin-top:20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      background:#ece8d6;
+      border-radius:14px;
+      padding:14px 18px;
+    }
+
+    .summary{
+      color:#7b563d;
+      font-size:15px;
+      font-weight:500;
+    }
+
+    /* Tombol Confirm Order warna coklat */
+    .confirm-btn{
+      border:none;
+      background:#8b5e3c; /* coklat */
+      color:white;
+      padding:12px 22px;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s ease;
+    }
+
+    .confirm-btn:hover{
+      background:#6b442a; /* coklat lebih gelap saat hover */
+      transform:translateY(-2px);
+    }
+
+    @media(max-width:992px){
+      .content{ grid-template-columns:1fr; }
+      .preorder-box{ min-height:220px; }
+    }
+
+    @media(max-width:600px){
+      body{ padding:12px; }
+      .header{ padding:18px; gap:10px; }
+      .header-title{ font-size:22px; }
+      .back-button{ width:34px; height:34px; font-size:16px; }
+      .content{ padding:14px; gap:14px; }
+      .card{ padding:14px; border-radius:14px; }
+      .section-title{ font-size:20px; }
+      .user-card{ padding:12px; gap:10px; }
+      .user-icon{ width:45px; height:45px; font-size:20px; }
+      .user-name{ font-size:16px; }
+      .reservation-item{ font-size:14px; }
+      .footer{ flex-direction:column; align-items:stretch; }
+      .summary{ text-align:center; }
+      .confirm-btn{ width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="booking-wrapper">
+    <div class="header">
+      <div class="back-button">←</div>
+      <div class="header-title">Booking Summary</div>
+    </div>
+
+    <div class="content">
+      <div>
+        <div class="user-card">
+          <div class="user-icon">👤</div>
+          <div>
+            <div class="user-name">Ayumi Putri</div>
+            <div class="user-email">ayumiputri@gmail.com</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Seat Reservation</div>
+          <div class="reservation-box">
+            <div class="reservation-item"><span>Jam/Tanggal:</span> - / -</div>
+            <div class="reservation-item"><span>Kursi:</span> -</div>
+            <div class="reservation-item"><span>Additional Notes:</span></div>
+            <div class="notes-box">Tidak ada catatan tambahan.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Your Pre-Order</div>
+        <div class="preorder-box">Belum ada item pre-order.</div>
+        <div class="footer">
+          <div class="summary">0 Items | Total 0</div>
+          <button class="confirm-btn">Confirm Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
