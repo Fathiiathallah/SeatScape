@@ -40,11 +40,11 @@ body {
 
 /* CARD */
 .card {
-  width: 520px;
+  width: 450px;
   max-width: 90%;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(15px);
-  padding: 45px;
+  padding: 30px;
   border-radius: 20px;
   text-align: center;
   color: white;
@@ -53,8 +53,8 @@ body {
 /* DESKTOP LEBIH BESAR (SUDAH DIPERBESAR) */
 @media (min-width: 1024px) {
   .card {
-    width: 600px;
-    padding: 50px;
+    width: 450px;
+    padding: 30px;
   }
 }
 
