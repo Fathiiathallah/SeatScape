@@ -404,6 +404,75 @@ body {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     background: black;
 }
+
+/* ================= EMAIL SENT MODAL ================= */
+#emailSentModal {
+    z-index: 10000; /* Memastikan numpuk di atas pop-up pertama */
+}
+
+.icon-modal {
+    background-color: #FFFFFF; 
+    width: 90%;
+    max-width: 320px;
+    border-radius: 20px;
+    padding: 50px 25px 30px; 
+    position: relative;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    animation: popupBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.floating-icon {
+    position: absolute;
+    top: -35px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background-color: #745136; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    border: 3px solid #EAE5D5;
+}
+
+.floating-icon img {
+    width: 110%;
+    height: auto;
+    object-fit: contain;
+}
+
+.icon-modal h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: black; 
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.btn-oke {
+    background-color: #745136;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-oke:hover {
+    background-color: #5c3e29;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(116, 81, 54, 0.3);
+}
+
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 900px) {
     .summary-content {
