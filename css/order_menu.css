@@ -252,6 +252,89 @@ body {
     bottom: 120px;
 }
 
+/* ================= WARNING MODAL (KERANJANG KOSONG) ================= */
+.warning-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: none; /* Default disembunyikan */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeInOverlay 0.3s ease-out forwards;
+}
+
+.warning-modal {
+    background-color: #FFFFFF; 
+    width: 90%;
+    max-width: 320px;
+    border-radius: 20px;
+    padding: 50px 25px 25px; 
+    position: relative;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    /* Pakai animasi bounce yang sama biar seragam */
+    animation: popupBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.warning-icon {
+    position: absolute;
+    top: -35px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background-color: #C0392B; /* Merah elegan untuk warning */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+    border: 3px solid #EAE5D5;
+}
+
+.warning-modal h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2C1E16; 
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.warning-modal .btn-oke {
+    background-color: #2C1E16;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.warning-modal .btn-oke:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupBounce {
+    0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+    50% { transform: scale(1.05) translateY(-10px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
 /* ================= RESPONSIVE ADJUSTMENTS ================= */
 @media (max-width: 768px) {
     .category-title { 
