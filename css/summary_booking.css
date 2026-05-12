@@ -17,7 +17,7 @@ body {
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-/* --- SUMMARY HEADER --- */
+/* --- SUMMARY HEADER (GLASSMORPHISM) --- */
 .summary-top-header {
     background-color: rgba(115, 86, 63, 0.85);
     backdrop-filter: blur(16px);
@@ -33,8 +33,8 @@ body {
 }
 
 .back-button {
-    position: absolute;
-    left: 40px; /* Margin kiri disamakan dengan navbar utama */
+    position: absolute; /* WAJIB absolute agar judul tetap benar-benar di tengah */
+    left: 40px; 
     color: white;
     font-size: 24px;
     text-decoration: none;
@@ -48,6 +48,15 @@ body {
 
 .back-button:hover {
     transform: translateX(-5px);
+}
+
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em; 
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-align: center;
 }
 
 /* ================= BACKGROUND FULL SCREEN ================= */
@@ -93,7 +102,7 @@ body {
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-brown);
     font-weight: 700;
     margin-bottom: 15px;
@@ -471,51 +480,6 @@ body {
     background-color: #5c3e29;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(116, 81, 54, 0.3);
-}
-
-/* ================= HEADER (Di dalam kotak) ================= */
-.summary-header {
-    position: relative; /* KUNCI UTAMA: Biar tombol back ngga terbang keluar */
-    background-color: var(--header-brown);
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80px; /* Kasih ruang atas-bawah biar lega */
-    color: white;
-}
-
-.back-button {
-    position: absolute; /* Tombol ditarik ke kiri */
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%); /* Kunci persis di tengah vertikal */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.back-button:hover {
-    background: rgba(255,255,255,0.3);
-}
-
-.header-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    text-align: center;
-    padding: 0 50px; /* Jarak aman biar judul ngga nabrak tombol back */
-    line-height: 1.2;
 }
 
 /* ================= RESPONSIVE DESIGN ================= */
