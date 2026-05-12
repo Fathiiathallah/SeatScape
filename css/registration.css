@@ -99,15 +99,22 @@ body {
 }
 
 /* BUTTON */
-.btn-login {
-  width: 100%;
-  padding: 14px;
-  margin-top: 15px;
-  background: #f5f5dc;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  color: #674736;
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #f5f5dc;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #674736;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Biar smooth */
+}
+
+.btn-register:hover {
+    background: #e8e8c8; /* Warna sedikit lebih gelap pas disentuh */
+    transform: translateY(-2px); /* Efek tombol naik dikit */
 }
 
 .btn-back {
