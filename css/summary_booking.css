@@ -473,20 +473,85 @@ body {
     box-shadow: 0 4px 10px rgba(116, 81, 54, 0.3);
 }
 
+/* ================= HEADER (Di dalam kotak) ================= */
+.summary-header {
+    position: relative; /* KUNCI UTAMA: Biar tombol back ngga terbang keluar */
+    background-color: var(--header-brown);
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px; /* Kasih ruang atas-bawah biar lega */
+    color: white;
+}
+
+.back-button {
+    position: absolute; /* Tombol ditarik ke kiri */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* Kunci persis di tengah vertikal */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.back-button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    padding: 0 50px; /* Jarak aman biar judul ngga nabrak tombol back */
+    line-height: 1.2;
+}
+
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 900px) {
     .summary-content {
-        grid-template-columns: 1fr; /* Jadi 1 kolom di layar kecil */
-        gap: 25px;
-        padding: 25px;
+        display: flex !important; /* Paksa jadi flexbox */
+        flex-direction: column !important; /* Paksa numpuk 1 kolom */
+        gap: 20px !important;
+        padding: 20px !important;
     }
 }
 
 @media (max-width: 600px) {
-    .summary-page-bg { padding: 15px; }
-    .summary-header { padding: 15px 20px; }
-    .header-title { font-size: 1.5rem; }
-    .summary-content { padding: 20px; }
-    .section-title { font-size: 1.2rem; }
-    .btn-confirm { font-size: 1rem; padding: 12px; }
+    .summary-page-bg { padding: 10px; }
+    
+    /* Penyesuaian Header di HP */
+    .summary-header { 
+        padding: 15px; 
+        min-height: 70px; 
+    }
+    
+    .back-button {
+        left: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .header-title { 
+        font-size: 1.4rem; /* Font dikecilin biar muat di HP */
+        padding: 0 45px; 
+    }
+    
+    /* Penyesuaian Isi Konten di HP */
+    .summary-content { padding: 15px !important; gap: 15px !important; }
+    .section-title { font-size: 1.2rem; margin-bottom: 10px; }
+    .info-box { padding: 15px; } 
+    .btn-confirm { font-size: 1rem; padding: 12px; margin-top: 5px; }
 }
