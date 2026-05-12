@@ -41,8 +41,8 @@
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="user-details">
-                            <h3 class="user-name">Ayumi Putri</h3>
-                            <p class="user-email">ayumiputri@gmail.com</p>
+                            <h3 class="user-name" id="summary-user-name">Loading...</h3>
+                            <p class="user-email" id="summary-user-email">Loading...</p>
                         </div>
                     </div>
 
@@ -116,11 +116,20 @@
                 
                 <div class="qr-container">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=AdoreUSpace" alt="QR Code" class="qr-code">
-                    <div class="download-btn">
+                    <div class="download-btn" onclick="downloadAndShowEmailPopup()">
                         <i class="fa-solid fa-download"></i> Download QR
                     </div>
                 </div>
-
+                
+                <div class="success-modal-overlay" id="emailSentModal" style="z-index: 10000;">
+                    <div class="icon-modal">
+                        <div class="floating-icon">
+                            <img src="./images/Logo.png" alt="Logo">
+                </div>
+                <h3>Your order has been<br>sent to your email</h3>
+                <button type="button" class="btn-oke" onclick="document.getElementById('emailSentModal').style.display = 'none';">Oke</button>
+            </div>
+        </div>
                 <div class="info-text">
                     <p class="email-note">Your order details will be sent to your email.</p>
                     <p class="warning-text">Once the reservation is made, the booking cannot be canceled. Please arrive at the reserved time. We hope you enjoy your day at AdoreU Space.<br><strong>*Payment upon arrival</strong></p>
@@ -139,6 +148,15 @@
         // Saat halaman dimuat, kita tarik data dari sessionStorage
         document.addEventListener("DOMContentLoaded", function() {
             
+            // --- LOGIKA MENGAMBIL DATA USER YANG LOGIN ---
+            // Mengambil nama dan email dari sessionStorage. Kalau kosong, tampilkan "Guest"
+            const activeUserName = sessionStorage.getItem('loggedInName') || 'Guest User';
+            const activeUserEmail = sessionStorage.getItem('loggedInEmail') || 'Please login first';
+
+            // Masukkan data ke HTML
+            document.getElementById('summary-user-name').innerText = activeUserName;
+            document.getElementById('summary-user-email').innerText = activeUserEmail;
+
             // 1. Ambil data Menu Pre-order
             let itemsCount = sessionStorage.getItem('preorderItems');
             let totalPrice = sessionStorage.getItem('preorderTotal');
@@ -185,6 +203,34 @@
                     document.getElementById('successModal').style.display = 'flex';
                 }, 800); // Muncul 0.8 detik setelah tombol jadi hijau
             }, 1500);
+        }
+
+        // Fungsi saat tombol Download diklik
+        function downloadAndShowEmailPopup() {
+            // 1. Munculkan pop-up kedua ("Sent to email")
+            document.getElementById('emailSentModal').style.display = 'flex';
+
+            // 2. Unduh QR Code secara paksa (Force Download) tanpa pindah halaman
+            const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=AdoreUSpace';
+            
+            fetch(qrUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    // Bikin link download sementara dari data gambar
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.style.display = 'none';
+                    link.href = url;
+                    link.download = 'AdoreU_Booking_QR.png'; // Nama file pas didownload
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    
+                    // Bersihkan memori setelah didownload
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(link);
+                })
+                .catch(error => console.error('Gagal mengunduh QR:', error));
         }
     </script>
 </body>
