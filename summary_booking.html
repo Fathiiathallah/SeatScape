@@ -157,22 +157,44 @@
             document.getElementById('summary-user-name').innerText = activeUserName;
             document.getElementById('summary-user-email').innerText = activeUserEmail;
 
-            // 1. Ambil data Menu Pre-order
+            // 1. DATA MENU PRE-ORDER
             let itemsCount = sessionStorage.getItem('preorderItems');
             let totalPrice = sessionStorage.getItem('preorderTotal');
+            let namesData = sessionStorage.getItem('preorderNames'); // Ambil data nama menu
 
             if (itemsCount && totalPrice && parseInt(itemsCount) > 0) {
                 document.getElementById('summary-items').innerText = itemsCount + " Items";
                 document.getElementById('summary-price').innerText = parseInt(totalPrice).toLocaleString('en-US');
                 
-                // Ubah tampilan list menjadi sukses
+                // Siapkan HTML untuk daftar menu
+                let menuListHTML = '';
+                if (namesData) {
+                    let namesArray = JSON.parse(namesData); // Ubah teks kembali menjadi Array
+                    
+                    // Bikin list HTML sederhana
+                    menuListHTML = `<ul style="margin-top: 8px; padding-left: 20px; font-size: 0.9rem; color: #2C1E16; line-height: 1.6;">`;
+                    namesArray.forEach(name => {
+                        menuListHTML += `<li>${name}</li>`;
+                    });
+                    menuListHTML += `</ul>`;
+                }
+
+                // Ubah tampilan kotak hijau menjadi sukses + daftar menu di bawahnya
                 document.getElementById('preorder-list').innerHTML = `
-                    <div class="preorder-item-success">
-                        <i class="fa-solid fa-check-circle" style="color: #2e7d32; font-size: 24px;"></i>
-                        <div>
-                            <strong>Menu Selected</strong>
-                            <p>${itemsCount} delicious items waiting for you!</p>
+                    <div class="preorder-item-success" style="align-items: flex-start; padding: 20px;">
+                        <i class="fa-solid fa-check-circle" style="color: #2e7d32; font-size: 24px; margin-top: 2px;"></i>
+                        <div style="flex-grow: 1;">
+                            <strong style="color: #2C1E16; font-size: 1.05rem;">Menu Selected (${itemsCount} Items)</strong>
+                            ${menuListHTML}
                         </div>
+                    </div>
+                `;
+            } else {
+                // Kalau nggak ada pre-order, tampilkan pesan kosong
+                document.getElementById('preorder-list').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        <p>No pre-order items selected.</p>
                     </div>
                 `;
             }
