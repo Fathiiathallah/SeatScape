@@ -301,7 +301,7 @@ body {
 .box { width: 16px; height: 16px; border: 2px solid var(--text-dark); border-radius: 4px; }
 .box.filled { background: rgba(44, 30, 22, 0.1); border-color: rgba(44, 30, 22, 0.5); display: flex; align-items: center; justify-content: center;}
 .box.filled::after { content: '\f00d'; font-family: 'FontAwesome'; font-size: 10px; color: rgba(44, 30, 22, 0.6); }
-.box.chosen { background: var(--text-dark); }
+.box.chosen { background: #745136; }
 
 .seat-map-container {
     border: 2px solid rgba(116, 81, 54, 0.15);
