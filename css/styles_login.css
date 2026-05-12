@@ -133,6 +133,12 @@ body {
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.3s ease; /* Tambahan biar smooth */
+}
+
+.btn-login:hover {
+    background: #e8e8c8; /* Berubah sedikit lebih gelap pas disentuh kursor */
+    transform: translateY(-2px); /* Efek tombol naik dikit */
 }
 
 .btn-back {
