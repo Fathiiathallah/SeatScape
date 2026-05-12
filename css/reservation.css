@@ -449,21 +449,24 @@ body {
 }
 
 
-/* ================= RESPONSIVE DESIGN ================= */
-@media (max-width: 900px) {
-    .reservation-page-bg {
-        height: auto;
-        min-height: 100vh;
-        padding: 20px;
+/* ================= RESPONSIVE KHUSUS LAYAR HP ================= */
+@media (max-width: 600px) {
+    .summary-header, 
+    .menu-top-header {
+        padding: 15px;
+        min-height: 65px;
     }
-    .reservation-card {
-        grid-template-columns: 1fr; /* Jadi 1 kolom bersusun di layar HP */
-        gap: 25px;
-        padding: 25px;
+
+    .back-button {
+        left: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
     }
-    .card-divider {
-        width: 100%;
-        height: 2px;
-        margin: 5px 0;
+
+    .header-title, 
+    .menu-top-title {
+        font-size: 1.3rem; /* Font judul dikecilin dikit di layar HP */
+        padding: 0 45px; /* Pagar jarak aman disesuaikan */
     }
 }
