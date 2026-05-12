@@ -448,6 +448,7 @@ body {
     box-shadow: 0 4px 10px rgba(116, 81, 54, 0.3);
 }
 
+
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 900px) {
     .reservation-page-bg {
