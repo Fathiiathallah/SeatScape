@@ -473,24 +473,20 @@ body {
     box-shadow: 0 4px 10px rgba(116, 81, 54, 0.3);
 }
 
-/* ================= RESPONSIVE KHUSUS LAYAR HP ================= */
+* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 900px) {
+    .summary-content {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di layar kecil */
+        gap: 25px;
+        padding: 25px;
+    }
+}
+
 @media (max-width: 600px) {
-    .summary-header, 
-    .menu-top-header {
-        padding: 15px;
-        min-height: 65px;
-    }
-
-    .back-button {
-        left: 15px;
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-    }
-
-    .header-title, 
-    .menu-top-title {
-        font-size: 1.3rem; /* Font judul dikecilin dikit di layar HP */
-        padding: 0 45px; /* Pagar jarak aman disesuaikan */
-    }
+    .summary-page-bg { padding: 15px; }
+    .summary-header { padding: 15px 20px; }
+    .header-title { font-size: 1.5rem; }
+    .summary-content { padding: 20px; }
+    .section-title { font-size: 1.2rem; }
+    .btn-confirm { font-size: 1rem; padding: 12px; }
 }
