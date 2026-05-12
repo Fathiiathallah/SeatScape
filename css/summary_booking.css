@@ -476,32 +476,17 @@ body {
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 900px) {
     .summary-content {
-        display: flex !important; /* Paksa ganti wujud jadi flexbox */
-        flex-direction: column !important; /* Paksa numpuk ke bawah jadi 1 kolom */
-        gap: 20px !important;
-        padding: 20px !important;
+        grid-template-columns: 1fr; /* Jadi 1 kolom di layar kecil */
+        gap: 25px;
+        padding: 25px;
     }
 }
 
 @media (max-width: 600px) {
-    .summary-page-bg { padding: 10px; }
-    .summary-card { border-radius: 15px; } /* Kurangi lengkungan di HP biar space lebih luas */
-    
-    .summary-header { padding: 15px; min-height: 65px; }
-    .header-title { font-size: 1.35rem; padding: 0 40px; }
-    
-    .summary-content { padding: 15px !important; gap: 15px !important; }
-    .section-title { font-size: 1.15rem; margin-bottom: 10px; }
-    
-    /* Kurangi padding di dalam kotak putih biar ruang teks makin lega */
-    .info-box { padding: 15px; } 
-    
-    .reservation-item { margin-bottom: 15px; }
-    .reservation-item p { font-size: 0.95rem; }
-    
-    /* Sesuaikan text preorder di HP */
-    .preorder-item-success { padding: 15px; }
-    .preorder-item-success strong { font-size: 0.95rem !important; }
-    
-    .btn-confirm { font-size: 1rem; padding: 12px; margin-top: 5px; }
+    .summary-page-bg { padding: 15px; }
+    .summary-header { padding: 15px 20px; }
+    .header-title { font-size: 1.5rem; }
+    .summary-content { padding: 20px; }
+    .section-title { font-size: 1.2rem; }
+    .btn-confirm { font-size: 1rem; padding: 12px; }
 }
