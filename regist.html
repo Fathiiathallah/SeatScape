@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <title>AdoreU Space</title>
-  <link rel="stylesheet" href="../css/registration.css">
+  <link rel="stylesheet" href="./css/registration.css">
 </head>
 
 <body>
@@ -33,25 +33,61 @@
 
       <div class="input-group">
         <i class="fas fa-user"></i>
-        <input type="text" placeholder="Username" required>
+        <input type="text" id="reg-username" placeholder="Username" required>
       </div>
 
       <div class="input-group">
         <i class="fas fa-envelope"></i>
-        <input type="email" placeholder="Email" required>
+        <input type="email" id="reg-email" placeholder="Email" required>
       </div>
 
       <div class="input-group">
         <i class="fas fa-eye"></i>
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="reg-password" placeholder="Password" required>
       </div>
 
-      <button type="submit" class="btn-login"><a href="index.html">Register</a></button>
+      <button type="button" class="btn-register" onclick="handleRegister()">Register</button>
       <button type="button" class="btn-back"><a href="index.html">Back to home</a></button>
 
     </div>
 
   </div>
+
+  <script>
+    function handleRegister() {
+        // 1. Ambil elemen input dari form
+        const usernameInput = document.getElementById('reg-username');
+        const emailInput = document.getElementById('reg-email');
+        const passwordInput = document.getElementById('reg-password');
+        // Set default value kalau misalnya user iseng ngosongin form
+        
+        let userName = "New User";
+        let userEmail = "newuser@gmail.com";
+        let userPassword = "";
+
+        // Tarik data asli kalau formnya diisi
+        if (usernameInput && usernameInput.value !== "") {
+            userName = usernameInput.value;
+        }
+        
+        if (emailInput && emailInput.value !== "") {
+            userEmail = emailInput.value;
+        }
+
+        if (passwordInput && passwordInput.value !== "") {
+            userPassword = passwordInput.value;
+        }
+
+        // 2. Simpan ke memori browser (Session Storage)
+        // Kita pakai nama 'key' yang sama dengan halaman summary biar otomatis terbaca!
+        sessionStorage.setItem('loggedInName', userName);
+        sessionStorage.setItem('loggedInEmail', userEmail);
+        sessionStorage.setItem('loggedInPassword', userPassword);
+
+        // 3. Pindah ke halaman Home (atau arahkan ke login.html kalau alur lu minta login ulang)
+        window.location.href = 'index.html'; 
+    }
+  </script>
 
 </body>
 </html>
