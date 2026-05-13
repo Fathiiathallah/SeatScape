@@ -72,6 +72,8 @@ html, body {
     display: flex;
     align-items: center;
     gap: 3rem;
+    position: relative;
+    right: 100px;
 }
 
 .search-bar {
@@ -191,26 +193,41 @@ html, body {
 }
 
 .review-hero {
-    width: 100%;
-    margin: 0;
-    height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/bg-landng-page.jpeg') center/cover;
+    height: 500px;
+
+    background:
+        linear-gradient(
+            rgba(97, 70, 54, 0.45),
+            rgba(97, 70, 54, 0.45)
+        ),
+        url('images/bg-review.jpg');
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+
+    padding-left: 80px;
+
+    position: relative;
 }
 
 .review-hero h1 {
-    color: white;
+    color: #F5F5DC;
+
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    line-height: 1.2;
+
+    font-size: 5rem;
+    line-height: 1.1;
+
+    font-weight: 700;
 }
 
 .review-hero h1 span {
     font-style: italic;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .review-content-section {
@@ -230,14 +247,77 @@ html, body {
 }
 
 .btn-write {
-    background-color: #F5F5DC;
+    background: linear-gradient(135deg, #F5F5DC, #E9DFC8);
     color: #614636;
+
     border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
+    padding: 14px 30px;
+    border-radius: 999px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
+
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.18),
+        0 0 0 rgba(245,245,220,0);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-write:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    background: linear-gradient(135deg, #FFFBEF, #E8DCC2);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.25),
+        0 0 25px rgba(245,245,220,0.35);
+}
+
+.btn-write:active {
+    transform: scale(0.97);
+}
+
+.btn-write i {
+    transition: transform 0.3s ease;
+}
+
+.btn-write:hover i {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+.btn-write::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -75%;
+
+    width: 50%;
+    height: 100%;
+
+    background: rgba(255,255,255,0.35);
+
+    transform: skewX(-25deg);
+
+    transition: left 0.6s ease;
+}
+
+.btn-write:hover::before {
+    left: 130%;
 }
 
 /* Grid System Responsif */
@@ -387,6 +467,7 @@ textarea {
 
 /* --- FOOTER STYLING (VERSI RINGKAS) --- */
 .footer-main {
+
     background-color: #D4C7B5;
     padding: 40px 0 20px 0; /* Dikurangi dari 80px */
     color: #4A3B32;
