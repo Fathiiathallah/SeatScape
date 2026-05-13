@@ -194,7 +194,7 @@ html, body {
 
 .review-hero {
     height: 570px;
-    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('../images/bg-hero-review.jpeg');
+    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('images/bg-hero-review.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -223,19 +223,10 @@ html, body {
 
 .review-content-section {
     padding: 80px 0 60px;
+
+    background-color: #6B4E3D;
+
     position: relative;
-    z-index: 1;
-
-    background:
-        linear-gradient(
-            rgba(97,70,54,0.45),
-            rgba(97,70,54,0.45)
-        ),
-        url('images/café review bg.jpg');
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 .container {
