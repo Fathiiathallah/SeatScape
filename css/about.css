@@ -594,78 +594,136 @@ a {
 }
 
 /* ==========================================================
-   RESPONSIVE MOBILE STYLES (Tambahkan di baris paling bawah)
+   RESPONSIVE MOBILE STYLES (Di baris paling bawah)
    ========================================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Perbaiki Header / Navbar */
+    /* --- HEADER LAYOUT MOBILE --- */
     .header-container {
-        padding: 0 10px;
-    }
-    .search-bar, .nav-links {
-        display: none; /* Sembunyikan search & menu di mobile (sebaiknya nanti pakai hamburger menu) */
-    }
-    .nav-wrapper {
-        gap: 1rem;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative; /* Penting untuk absolute icon */
     }
 
-    /* 2. Sesuaikan Ukuran Font agar tidak kebesaran */
-    .section-title {
-        font-size: 2.2rem;
+    /* Sembunyikan navbar bawaan desktop */
+    .desktop-nav {
+        display: none !important; 
     }
-    .feature-text h2 {
-        font-size: 2rem;
+
+    /* Posisikan user icon persis di tengah header */
+    .user-icon-mobile {
+        display: flex !important;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    .location-title {
+
+    /* Tombol Hamburger */
+    .hamburger-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
         font-size: 1.8rem;
+        cursor: pointer;
     }
 
-    /* 3. Ubah Grid 2 Kolom menjadi 1 Kolom (Atas-Bawah) */
-    .about-grid, 
-    .feature-row {
+    /* --- SIDEBAR MENU MOBILE --- */
+    .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Disembunyikan di luar layar kanan */
+        width: 280px;
+        height: 100vh;
+        background-color: var(--brand-brown); /* Warna background sidebar */
+        z-index: 2000;
+        padding: 80px 20px 30px;
+        transition: var(--transition-smooth);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    /* Class yang ditambah via JS saat aktif */
+    .mobile-sidebar.active {
+        right: 0; 
+    }
+
+    .mobile-sidebar .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1.2rem;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* Overlay gelap di belakang sidebar */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(4px);
+        z-index: 1999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-smooth);
+    }
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- LAYOUT KONTEN LAINNYA --- */
+    .about-grid, .feature-row {
         grid-template-columns: 1fr;
         gap: 3rem;
-        text-align: center; /* Teks dibikin rata tengah untuk mobile */
-    }
-
-    /* 4. Perbaiki Lebar Gambar yang Luber (CRITICAL FIX) */
-    .about-img-wrapper, 
-    .feature-img-wrapper {
-        width: 100%;
-        max-width: 320px; /* Batasi maksimal lebarnya di mobile */
-        margin: 0 auto; /* Posisi di tengah */
-        aspect-ratio: 1 / 1;
-    }
-
-    /* Kembalikan list fitur agar tetap rata kiri meski parent-nya rata tengah */
-    .feature-list {
-        text-align: left;
-        display: inline-block; /* Agar bullet point tetap rapi di tengah layar */
-    }
-
-    /* 5. Sesuaikan Padding Section */
-    .about-section {
-        padding: 6rem 1.5rem 3rem;
-    }
-    .main-content {
-        padding: 4rem 1.5rem;
-    }
-    .features-wrapper {
-        gap: 5rem;
-    }
-
-    /* 6. Ubah Footer jadi Stack (Atas-Bawah) */
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
         text-align: center;
     }
-    .footer-item {
-        justify-content: center; /* Ikon dan teks di footer rata tengah */
+
+    .about-img-wrapper, .feature-img-wrapper {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .feature-list {
+        text-align: left;
+        display: inline-block;
+    }
+
+    /* --- FIX: FOOTER RATA KIRI --- */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start; /* Bikin item di dalam merapat ke kiri */
+        text-align: left; /* Teks rata kiri */
+        gap: 2rem;
+        padding: 0 20px 40px; /* Tambah jarak dari layar HP */
     }
     
-    /* Peta lokasi disesuaikan tingginya */
-    .map-wrapper {
-        height: 350px;
+    .footer-item {
+        justify-content: flex-start; /* Icon dan teks rata kiri */
+    }
+}
+
+/* Sembunyikan elemen khusus mobile saat di tampilan Desktop */
+@media screen and (min-width: 769px) {
+    .hamburger-btn, .user-icon-mobile, .mobile-sidebar, .sidebar-overlay {
+        display: none !important;
     }
 }
