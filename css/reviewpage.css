@@ -13,7 +13,18 @@ html, body {
     margin-top: 60px; 
     background-color: #614636;
 }
+:root {
+    --transition-bounce: all 0.3s ease;
+    --transition-smooth: all 0.4s ease;
 
+    --brand-beige: #F5F5DC;
+    --brand-brown: #614636;
+    --brand-text: #4A3525;
+
+    --font-main: 'Poppins', sans-serif;
+
+    --shadow-inner: inset 0 1px 0 rgba(255,255,255,0.05);
+}
 /* --- HEADER / NAVBAR --- */
 .header {
     background-color: rgba(115, 86, 63, 0.85);
@@ -112,7 +123,7 @@ html, body {
     color: #a0aabf;
 }
 
-.search-input:focus + .search-icon {
+.search-bar:focus-within .search-icon {
     color: var(--brand-brown);
     transform: translateY(-50%) scale(1.1);
 }
