@@ -200,7 +200,7 @@ html, body {
             rgba(97,70,54,0.72),
             rgba(97,70,54,0.72)
         ),
-        url('images/bg hero review.jpg');
+        url('./images/bg hero review.jpg');
 
     background-size: cover;
     background-position: center;
