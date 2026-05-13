@@ -8,33 +8,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/landingpage.css">
-    <link rel="stylesheet" href="./css/reviewpage.css">  
+    
+    <link rel="stylesheet" href="reviewpage.css">  
 </head>
 <body>
 
+    <!-- Header / Navbar -->
     <header class="header">
         <div class="header-container">
+            <!-- Logo Icon -->
             <div class="logo">
-                <img src="images/Logo.png" alt="Logo" style="height: 45px; width: auto;">
+                <img src="images/Logo.png" class="img-class" style="height: 45px; width: auto;">
             </div>
 
-            <div class="user-icon">
-                <i class="fa-regular fa-user"></i>
+            <!-- HAMBURGER (TAMBAHKAN INI) -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
-            <div class="mobile-menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <nav class="nav-wrapper">
+            <!-- Search and Nav Links -->
+            <div class="nav-wrapper">
+                <!-- Search Bar -->
                 <div class="search-bar">
-                    <input type="text" placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search" class="search-input">
                 </div>
-                <div class="nav-links">
+                
+                <!-- Links -->
+                <nav class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-            </nav>
+                </nav>
+            </div>
+
+            <!-- User Icon -->
+            <div class="user-icon">
+                <a href="login.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -66,7 +80,7 @@
 
                     <div class="review-card">
                         <div class="card-user">
-                            <img src="images/mass charles.jpg" alt="User">
+                            <img src="images/mas charles.jpg" alt="User">
                             <div class="user-info">
                                 <h4>Charles Leclerc</h4>
                                 <p>Traveller</p>
@@ -78,7 +92,7 @@
 
                     <div class="review-card">
                         <div class="card-user">
-                            <img src="images/mba georgina.jpg" alt="User">
+                            <img src="images/mba georgina .jpg" alt="User">
                             <div class="user-info">
                                 <h4>Georgina Sparks</h4>
                                 <p>CEO, Model Agency</p>
@@ -97,7 +111,7 @@
                                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                             </div>
                         </div>
-                        <p class="review-desc">"Ti used to work from cafe, doing reservation via seatscape help me secured my fav spot in AdoreU Space"</p>
+                        <p class="review-desc">"i used to work from cafe, doing reservation via seatscape help me secured my fav spot in AdoreU Space"</p>
                     </div>
 
                     <div class="review-card">
@@ -128,20 +142,51 @@
         </section>
     </main>
 
+<!-- FOOTER SECTION -->
     <footer class="footer-main">
         <div class="footer-container">
+            <!-- Kolom Contact -->
             <div class="footer-column">
                 <h3 class="footer-title">Contact us</h3>
-                <div class="footer-item"><span class="icon-circle"><i class="fa-solid fa-phone"></i></span><p>+62 81341845072</p></div>
-                <div class="footer-item"><span class="icon-circle"><i class="fa-solid fa-envelope"></i></span><p>AUSpace@gmail.com</p></div>
+                <div class="footer-item">
+                    <span class="icon-circle"><i class="fa-solid fa-phone"></i></span>
+                    <p>+62 81341845072</p>
+                </div>
+                <a href="mailto:AUSpace@gmail.com" class="footer-link">
+                    <div class="footer-item">
+                        <span class="icon-circle"><i class="fa-solid fa-envelope"></i></span>
+                        <p>AUSpace@gmail.com</p>
+                    </div>
+                </a>
             </div>
+
+            <!-- Kolom Socials -->
             <div class="footer-column">
                 <h3 class="footer-title">Our Socials</h3>
-                <div class="footer-item"><span class="icon-circle"><i class="fa-brands fa-instagram"></i></span><p>@AdoreU.Space</p></div>
-                <div class="footer-item"><span class="icon-circle"><i class="fa-brands fa-facebook-f"></i></span><p>@AdoreU.Space</p></div>
-                <div class="footer-item"><span class="icon-circle"><i class="fa-brands fa-tiktok"></i></span><p>@AdoreU._Space</p></div>
+                
+                <a href="https://www.instagram.com/adoreu.crafts/" target="_blank" class="footer-link">
+                    <div class="footer-item">
+                        <span class="icon-circle"><i class="fa-brands fa-instagram"></i></span>
+                        <p>@AdoreU.Space</p>
+                    </div>
+                </a>
+
+                <a href="https://facebook.com/AdoreU.Space" target="_blank" class="footer-link">
+                    <div class="footer-item">
+                        <span class="icon-circle"><i class="fa-brands fa-facebook-f"></i></span>
+                        <p>@AdoreU.Space</p>
+                    </div>
+                </a>
+
+                <a href="https://tiktok.com/@AdoreU._Space" target="_blank" class="footer-link">
+                    <div class="footer-item">
+                        <span class="icon-circle"><i class="fa-brands fa-tiktok"></i></span>
+                        <p>@AdoreU._Space</p>
+                    </div>
+                </a>
             </div>
         </div>
+        
         <div class="footer-bottom">
             <p>© 2026 AdoreU Space Powered by Seatscape. All Rights Reserved</p>
         </div>
