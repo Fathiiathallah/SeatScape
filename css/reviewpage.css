@@ -194,7 +194,7 @@ html, body {
 
 .review-hero {
     height: 570px;
-    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('images/bg-hero-review.jpeg');
+    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('./images/bg-hero-review.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
