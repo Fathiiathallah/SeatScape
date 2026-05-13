@@ -1,11 +1,184 @@
 /* --- CSS KHUSUS HALAMAN REVIEW --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
 
 .review-page-main {
     margin-top: 60px; 
     background-color: #614636;
 }
 
+/* --- HEADER / NAVBAR --- */
+.header {
+    background-color: rgba(115, 86, 63, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 13px 0;
+    position: fixed; /* Ubah ke fixed agar header melayang di atas gambar */
+    width: 100%; /* Wajib 100% karena menggunakan fixed */
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2), var(--shadow-inner);
+    transition: var(--transition-smooth);
+}
+
+.header-container {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-bounce);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+}
+
+.brand-logo:hover {
+    transform: scale(1.1) rotate(-3deg); 
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.25));
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aabf;
+    font-size: 0.9rem;
+    transition: var(--transition-bounce);
+    z-index: 2;
+}
+
+.search-input {
+    padding: 0.6rem 1.2rem 0.6rem 2.8rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    width: 15rem;
+    outline: none;
+    font-family: var(--font-main);
+    transition: var(--transition-bounce);
+    backdrop-filter: blur(4px);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-input:focus {
+    border-color: var(--brand-beige);
+    background-color: #ffffff;
+    color: var(--brand-text);
+    box-shadow: 0 0 0 5px rgba(227, 216, 200, 0.2);
+    width: 23rem; 
+}
+
+.search-input:focus::placeholder {
+    color: #a0aabf;
+}
+
+.search-input:focus + .search-icon {
+    color: var(--brand-brown);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(90deg, transparent, var(--brand-beige), transparent);
+    transition: var(--transition-smooth);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--brand-beige);
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.user-icon a {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    text-decoration: none;
+    transition: var(--transition-bounce);
+}
+
+.user-icon a:hover {
+    color: var(--brand-brown);
+    background-color: var(--brand-beige);
+    border-color: var(--brand-beige);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
 .review-hero {
+    width: 100%;
+    margin: 0;
     height: 400px;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/bg-landng-page.jpeg') center/cover;
     display: flex;
@@ -196,6 +369,93 @@ textarea {
 
 .btn-submit:hover {
     background-color: #4A3525;
+}
+
+/* --- FOOTER STYLING (VERSI RINGKAS) --- */
+.footer-main {
+    background-color: #D4C7B5;
+    padding: 40px 0 20px 0; /* Dikurangi dari 80px */
+    color: #4A3B32;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px; /* Dikurangi dari 80px */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Dikurangi dari 20px agar item lebih rapat */
+}
+
+.footer-title {
+    font-size: 20px; /* Dikurangi dari 24px */
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 15px; /* Dikurangi dari 20px */
+    display: inline-block;
+}
+
+.footer-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 30px; /* Sedikit diperpendek */
+    height: 3px;
+    background-color: #614636;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Dikurangi dari 15px */
+}
+
+.icon-circle {
+    background-color: white;
+    width: 32px; /* Dikurangi dari 40px */
+    height: 32px; /* Dikurangi dari 40px */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.icon-circle i {
+    font-size: 14px; /* Icon menyesuaikan lingkaran yang lebih kecil */
+    color: #614636;
+}
+
+.footer-item p {
+    font-size: 14px; /* Dikurangi dari 16px */
+    font-weight: 500;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px solid #D2C4B5;
+    padding-top: 20px; /* Dikurangi dari 30px */
+    font-size: 13px; /* Sedikit lebih kecil */
+    color: #888;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.footer-link:hover {
+    opacity: 0.7;
 }
 
 /* --- RESPONSIVE MOBILE  --- */
