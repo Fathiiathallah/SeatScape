@@ -467,7 +467,7 @@ textarea {
 
 /* --- FOOTER STYLING (VERSI RINGKAS) --- */
 .footer-main {
-
+    font-family: 'Poppins', sans-serif;
     background-color: #D4C7B5;
     padding: 40px 0 20px 0; /* Dikurangi dari 80px */
     color: #4A3B32;
