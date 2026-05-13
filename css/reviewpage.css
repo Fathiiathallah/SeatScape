@@ -197,13 +197,13 @@ html, body {
 
     background:
         linear-gradient(
-            rgba(97, 70, 54, 0.6),
-            rgba(97, 70, 54, 0.6)
+            rgba(97,70,54,0.72),
+            rgba(97,70,54,0.72)
         ),
-        url('./images/bg-review.jpg');
+        url('images/bg hero review.jpg');
 
-    background-position: center;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 
     display: flex;
@@ -212,6 +212,8 @@ html, body {
     padding-left: 80px;
 
     position: relative;
+
+    border-bottom: 55px solid #7A5A46;
 }
 
 .review-hero h1 {
@@ -231,7 +233,20 @@ html, body {
 }
 
 .review-content-section {
-    padding: 60px 0;
+    padding: 80px 0 60px;
+    position: relative;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            rgba(97,70,54,0.45),
+            rgba(97,70,54,0.45)
+        ),
+        url('images/café review bg.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .container {
@@ -329,14 +344,32 @@ html, body {
 }
 
 .review-card {
-    background-color: #F5F5DC;
+    background: rgba(245,245,220,0.85);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+
+    transition: all 0.35s ease;
 }
 
-.review-card:hover { transform: translateY(-5px); }
+.review-card:hover {
+    transform: translateY(-8px) scale(1.02);
+
+    background: rgba(245, 245, 220, 0.82);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.25),
+        0 0 25px rgba(255,255,255,0.08);
+}
 
 .card-user {
     display: flex;
