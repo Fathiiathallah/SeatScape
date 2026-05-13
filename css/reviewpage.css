@@ -193,27 +193,16 @@ html, body {
 }
 
 .review-hero {
-    height: 500px;
-
-    background:
-        linear-gradient(
-            rgba(97,70,54,0.72),
-            rgba(97,70,54,0.72)
-        ),
-        url('/images/bg-hero-review.jpeg');
-
+    height: 570px;
+    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('../images/bg-hero-review.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
-
     padding-left: 80px;
-
     position: relative;
-
-    border-bottom: 55px solid #7A5A46;
+     
 }
 
 .review-hero h1 {
