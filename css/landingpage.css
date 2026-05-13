@@ -30,6 +30,9 @@
     background: var(--brand-brown); 
 }
 
+html {
+    scroll-behavior: smooth;
+}
 /* --- RESET DASAR --- */
 * {
     margin: 0;
@@ -199,6 +202,7 @@
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
 
 /* --- HERO SECTION --- */
 .hero {
@@ -728,6 +732,32 @@
 .review-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+.btn-view-more {
+    background-color: #F5F5DC;
+    color: #614636;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-view-more:hover {
+    background-color: #e8e3cf;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.reviews-overlay .btn-view-more {
+    margin-top: 40px; /* Sesuaikan angkanya buat ngatur seberapa turun buttonnya */
+    position: relative;
+    z-index: 10;
 }
 
 .review-header {
