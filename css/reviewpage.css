@@ -131,14 +131,17 @@ html, body {
 .nav-links {
     display: flex;
     gap: 2.5rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .nav-links a {
+    font-family: 'Poppins', sans-serif;
     color: white;
     text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
     position: relative;
     padding: 0.5rem 0;
 }
