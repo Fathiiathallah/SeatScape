@@ -956,7 +956,7 @@ html {
 
     .user-icon {
         position: fixed;
-        top: 28px;
+        top: 18px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 9999;
