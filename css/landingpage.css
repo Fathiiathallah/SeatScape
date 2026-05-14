@@ -944,6 +944,7 @@ html {
         gap: 0;
         position: relative;
         align-items: center;
+        min-height: 60px;
     }
 
     /* Logo kiri, user-icon kanan, hamburger paling kanan */
@@ -954,9 +955,9 @@ html {
 
     .user-icon {
         position: absolute;
-        top: 10px;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         z-index: 1001;
     }
 
