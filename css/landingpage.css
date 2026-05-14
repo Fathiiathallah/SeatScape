@@ -953,18 +953,17 @@ html {
     }
 
     .user-icon {
-        order: 2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 12px 0 0;
     }
 
-    .menu-toggle,
-    .user-icon {
-        height: 44px;
+    .menu-toggle {
+        order: 3;
         display: flex;
-        align-items: center;
     }
 
     /* Nav wrapper jadi dropdown */
