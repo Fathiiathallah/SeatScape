@@ -143,35 +143,29 @@
 
     </div>
 
-    <!-- JAVASCRIPT UNTUK MENGAMBIL DATA DARI HALAMAN SEBELUMNYA -->
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
     <script>
-        // Saat halaman dimuat, kita tarik data dari sessionStorage
         document.addEventListener("DOMContentLoaded", function() {
             
-            // --- LOGIKA MENGAMBIL DATA USER YANG LOGIN ---
-            // Mengambil nama dan email dari sessionStorage. Kalau kosong, tampilkan "Guest"
+            // 1. DATA USER LOGIN
             const activeUserName = sessionStorage.getItem('loggedInName') || 'Guest User';
             const activeUserEmail = sessionStorage.getItem('loggedInEmail') || 'Please login first';
 
-            // Masukkan data ke HTML
             document.getElementById('summary-user-name').innerText = activeUserName;
             document.getElementById('summary-user-email').innerText = activeUserEmail;
 
-            // 1. DATA MENU PRE-ORDER
+            // 2. DATA MENU PRE-ORDER
             let itemsCount = sessionStorage.getItem('preorderItems');
             let totalPrice = sessionStorage.getItem('preorderTotal');
-            let namesData = sessionStorage.getItem('preorderNames'); // Ambil data nama menu
+            let namesData = sessionStorage.getItem('preorderNames'); 
 
             if (itemsCount && totalPrice && parseInt(itemsCount) > 0) {
                 document.getElementById('summary-items').innerText = itemsCount + " Items";
                 document.getElementById('summary-price').innerText = parseInt(totalPrice).toLocaleString('en-US');
                 
-                // Siapkan HTML untuk daftar menu
                 let menuListHTML = '';
                 if (namesData) {
-                    let namesArray = JSON.parse(namesData); // Ubah teks kembali menjadi Array
-                    
-                    // Bikin list HTML sederhana
+                    let namesArray = JSON.parse(namesData); 
                     menuListHTML = `<ul style="margin-top: 8px; padding-left: 20px; font-size: 0.9rem; color: #2C1E16; line-height: 1.6;">`;
                     namesArray.forEach(name => {
                         menuListHTML += `<li>${name}</li>`;
@@ -179,7 +173,6 @@
                     menuListHTML += `</ul>`;
                 }
 
-                // Ubah tampilan kotak hijau menjadi sukses + daftar menu di bawahnya
                 document.getElementById('preorder-list').innerHTML = `
                     <div class="preorder-item-success" style="align-items: flex-start; padding: 20px;">
                         <i class="fa-solid fa-check-circle" style="color: #2e7d32; font-size: 24px; margin-top: 2px;"></i>
@@ -190,7 +183,6 @@
                     </div>
                 `;
             } else {
-                // Kalau nggak ada pre-order, tampilkan pesan kosong
                 document.getElementById('preorder-list').innerHTML = `
                     <div class="empty-state">
                         <i class="fa-solid fa-mug-hot"></i>
@@ -199,56 +191,58 @@
                 `;
             }
 
-            // 2. DI SINI PERBAIKANNYA: Ambil data Reservasi Kursi & Jadwal
+            // 3. DATA RESERVASI KURSI & JADWAL
             const resDate = sessionStorage.getItem('resDate') || 'Date not selected';
             const resTime = sessionStorage.getItem('resTime') || 'Time not selected';
             const resSeat = sessionStorage.getItem('resSeat') || 'Not Selected';
             const resNotes = sessionStorage.getItem('resNotes') || 'No additional notes.';
 
-            // Masukkan data ke HTML yang ada di kolom kiri
             document.getElementById('summary-datetime').innerText = `${resDate} | ${resTime}`;
             document.getElementById('summary-seat').innerText = resSeat;
             document.getElementById('summary-notes').innerText = resNotes;
         });
 
-        // 3. Modifikasi fungsi booking (Memunculkan Pop-up, Bukan Alert)
+        // 4. FUNGSI BOOKING (Muncul Modal & Kunci Scroll)
         function processBooking() {
             const btn = document.querySelector('.btn-confirm');
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
             
             setTimeout(() => {
                 btn.innerHTML = '<i class="fa-solid fa-check"></i> Booking Confirmed!';
-                btn.style.background = '#2e7d32'; // hijau sukses
+                btn.style.background = '#2e7d32'; 
                 
                 setTimeout(() => {
-                    // Membuka modal pop up alih-alih menampilkan alert jadul
+                    // Munculkan Modal QR
                     document.getElementById('successModal').style.display = 'flex';
-                }, 800); // Muncul 0.8 detik setelah tombol jadi hijau
+                    
+                    // --- RAHASIA MENGUNCI SCROLL BACKGROUND ---
+                    document.body.style.overflow = 'hidden';
+
+                }, 800); 
             }, 1500);
         }
 
-        // Fungsi saat tombol Download diklik
+        // 5. FUNGSI DOWNLOAD QR & BUKA POP-UP EMAIL
         function downloadAndShowEmailPopup() {
-            // 1. Munculkan pop-up kedua ("Sent to email")
+            // Sembunyikan modal pertama, buka modal kedua
+            document.getElementById('successModal').style.display = 'none';
             document.getElementById('emailSentModal').style.display = 'flex';
 
-            // 2. Unduh QR Code secara paksa (Force Download) tanpa pindah halaman
+            // Unduh QR Code paksa tanpa pindah halaman
             const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=AdoreUSpace';
             
             fetch(qrUrl)
                 .then(response => response.blob())
                 .then(blob => {
-                    // Bikin link download sementara dari data gambar
                     const url = window.URL.createObjectURL(blob);
                     const link = document.createElement('a');
                     link.style.display = 'none';
                     link.href = url;
-                    link.download = 'AdoreU_Booking_QR.png'; // Nama file pas didownload
+                    link.download = 'AdoreU_Booking_QR.png'; 
                     
                     document.body.appendChild(link);
                     link.click();
                     
-                    // Bersihkan memori setelah didownload
                     window.URL.revokeObjectURL(url);
                     document.body.removeChild(link);
                 })
