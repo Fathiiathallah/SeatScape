@@ -54,28 +54,33 @@ body {
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 100;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    padding: 0 20px;
 }
 
 .card-header .back-button {
     position: absolute;
-    left: 40px; 
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    padding: 0 10px;
-    transition: transform 0.2s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
 }
 
 .card-header .back-button:hover {
-    background: rgba(255,255,255,0.3);
-    transform: translateX(-3px);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) translateX(-3px);
 }
 
 .card-header .header-title {
@@ -84,7 +89,10 @@ body {
     font-weight: 700;
     margin: 0;
     letter-spacing: 0.5px;
+    text-align: center;
+    color: white;
 }
+
 
 /* ================= 2-COLUMN FORM CARD ================= */
 .reservation-card {
@@ -301,7 +309,7 @@ body {
 .box { width: 16px; height: 16px; border: 2px solid var(--text-dark); border-radius: 4px; }
 .box.filled { background: rgba(44, 30, 22, 0.1); border-color: rgba(44, 30, 22, 0.5); display: flex; align-items: center; justify-content: center;}
 .box.filled::after { content: '\f00d'; font-family: 'FontAwesome'; font-size: 10px; color: rgba(44, 30, 22, 0.6); }
-.box.chosen { background: #745136; }
+.box.chosen { background: var(--text-dark); }
 
 .seat-map-container {
     border: 2px solid rgba(116, 81, 54, 0.15);
@@ -467,4 +475,57 @@ body {
         margin: 5px 0;
     }
 }
+
+@media (max-width: 600px) {
+    .reservation-page-bg {
+        padding: 12px;
+    }
+    .card-header {
+        height: 65px;
+    }
+    .card-header .back-button {
+        left: 16px;
+        font-size: 20px;
+    }
+    .card-header .header-title {
+        font-size: 1.15rem;
+    }
+    .reservation-card {
+        padding: 16px;
+        gap: 20px;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .calendar-grid {
+        gap: 4px;
+    }
+    .date-item span {
+        height: 30px;
+        font-size: 0.78rem;
+    }
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .time-item span {
+        padding: 10px 0;
+        font-size: 0.85rem;
+    }
+    .btn-action {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    .notes-area {
+        height: 140px;
+    }
+    .btn-confirm {
+        padding: 13px;
+        font-size: 1rem;
+    }
+    /* Seat modal */
+    .seat-modal {
+        max-width: 95vw;
+        padding: 16px;
+    }
 }
