@@ -593,137 +593,260 @@ a {
     opacity: 0.7;
 }
 
-/* ==========================================================
-   RESPONSIVE MOBILE STYLES (Di baris paling bawah)
-   ========================================================== */
-@media screen and (max-width: 768px) {
-    /* --- HEADER LAYOUT MOBILE --- */
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+
+    /* HEADER MOBILE*/
+
+    .header {
+        padding: 12px 0;
+    }
+
     .header-container {
-        padding: 0 15px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        position: relative; /* Penting untuk absolute icon */
+        justify-content: space-between;
+
+        padding: 0 20px;
     }
 
-    /* Sembunyikan navbar bawaan desktop */
-    .desktop-nav {
-        display: none !important; 
+    /* Urutan Mobile: Logo - Account - Hamburger */
+    .logo {
+        order: 1;
     }
 
-    /* Posisikan user icon persis di tengah header */
-    .user-icon-mobile {
-        display: flex !important;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+    .user-icon {
+        order: 2;
+        margin-left: auto;
+        margin-right: 18px;
     }
 
-    /* Tombol Hamburger */
-    .hamburger-btn {
-        display: block;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+    .menu-toggle {
+        order: 3;
 
-    /* --- SIDEBAR MENU MOBILE --- */
-    .mobile-sidebar {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Disembunyikan di luar layar kanan */
-        width: 280px;
-        height: 100vh;
-        background-color: var(--brand-brown); /* Warna background sidebar */
-        z-index: 2000;
-        padding: 80px 20px 30px;
-        transition: var(--transition-smooth);
         display: flex;
         flex-direction: column;
-        gap: 30px;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-    }
+        gap: 5px;
 
-    /* Class yang ditambah via JS saat aktif */
-    .mobile-sidebar.active {
-        right: 0; 
-    }
-
-    .mobile-sidebar .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        font-size: 1.2rem;
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
         cursor: pointer;
+
+        z-index: 10001;
     }
 
-    /* Overlay gelap di belakang sidebar */
-    .sidebar-overlay {
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+
+        background-color: white;
+
+        border-radius: 10px;
+
+        transition: 0.3s ease;
+    }
+
+    /* Hide Desktop Nav */
+    .nav-wrapper {
         position: fixed;
-        top: 0;
+
+        top: 70px;
         left: 0;
+        right: 0;
         width: 100%;
-        height: 100vh;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(4px);
-        z-index: 1999;
+        height: calc(100vh - 70px);
+
+        background: rgba(115, 86, 63, 0.97);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+
+        padding: 30px 25px;
+
+        z-index: 999;
+
+        overflow-y: auto;
+
+        /* animation */
+        transform: translateY(-20px);
         opacity: 0;
         visibility: hidden;
-        transition: var(--transition-smooth);
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
     }
 
-    .sidebar-overlay.active {
+    /* Active Hamburger Menu */
+    .nav-wrapper.active {
+        transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
 
-    /* --- LAYOUT KONTEN LAINNYA --- */
-    .about-grid, .feature-row {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-    }
+    /* Search Bar Mobile */
+    .nav-wrapper.active .search-bar {
+        display: flex !important;
 
-    .about-img-wrapper, .feature-img-wrapper {
         width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
     }
 
-    .feature-list {
-        text-align: left;
-        display: inline-block;
+    .nav-wrapper.active .search-input {
+        width: 100%;
     }
 
-    /* --- FIX: FOOTER RATA KIRI --- */
+    /* Nav Links Mobile */
+    .nav-wrapper.active .nav-links {
+        display: flex !important;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        width: 100%;
+    }
+
+    .nav-wrapper.active .nav-links a {
+        font-size: 1.1rem;
+        font-weight: 600;
+
+        color: white;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .user-icon {
+        order: 2;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .menu-toggle {
+        order: 3;
+        display: flex;
+    }
+
+    /* HERO MOBILE */
+
+    .review-hero {
+        height: 420px;
+
+        padding: 0 25px;
+    }
+
+    .review-hero h1 {
+        font-size: 3rem;
+        line-height: 1.15;
+    }
+
+    /*REVIEW GRID MOBILE*/
+
+    .review-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .review-card {
+        padding: 24px;
+    }
+
+    .card-user {
+        align-items: flex-start;
+    }
+
+    .card-user img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .review-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /*BUTTON MOBILE*/
+
+    .action-bar {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .btn-write {
+        width: 100%;
+        justify-content: center;
+
+        font-size: 0.95rem;
+    }
+
+    /* MODAL MOBILE */
+
+    .modal {
+        padding: 20px 10px;
+        align-items: flex-start;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+
+        margin: 10px auto;
+
+        border-radius: 20px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    /*FOOTER MOBILE*/
+
     .footer-container {
         flex-direction: column;
-        align-items: flex-start; /* Bikin item di dalam merapat ke kiri */
-        text-align: left; /* Teks rata kiri */
-        gap: 2rem;
-        padding: 0 20px 40px; /* Tambah jarak dari layar HP */
-    }
-    
-    .footer-item {
-        justify-content: flex-start; /* Icon dan teks rata kiri */
-    }
-}
 
-/* Sembunyikan elemen khusus mobile saat di tampilan Desktop */
-@media screen and (min-width: 769px) {
-    .hamburger-btn, .user-icon-mobile, .mobile-sidebar, .sidebar-overlay {
-        display: none !important;
+        align-items: flex-start;
+
+        gap: 35px;
+
+        padding: 0 25px 35px;
+    }
+
+    .footer-column {
+        width: 100%;
+
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+    .footer-item {
+        justify-content: flex-start;
+    }
+
+    .footer-title::after {
+        left: 0;
+        right: auto;
+    }
+
+    .footer-bottom {
+        padding: 20px;
+
+        text-align: center;
     }
 }
