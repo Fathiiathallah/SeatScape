@@ -956,12 +956,15 @@ html {
 
     .user-icon {
         position: fixed;
-        top: 38px;
+        top: 28px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1001;
+        z-index: 9999;
     }
 
+    .user-icon a {
+        margin: 0;
+    }
     .menu-toggle {
         order: 3;
         display: flex;
