@@ -954,11 +954,11 @@ html {
 
     .user-icon {
         position: absolute;
-        top: 50%;
+        top: 10px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
         z-index: 1001;
-    }
+    }}
 
     .menu-toggle {
         order: 3;
