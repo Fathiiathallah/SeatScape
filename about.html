@@ -17,8 +17,15 @@
     <header class="header">
         <div class="header-container">
             <!-- Logo Icon -->
-            <div class="logo">
+            <div class="logo-link">
                 <img src="images/Logo.png" class="img-class" style="height: 45px; width: auto;">
+            </div>
+
+            <!-- HAMBURGER -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
             <!-- Search and Nav Links -->
@@ -183,4 +190,10 @@
         </div>
     </footer>
 </body>
+
+    <script>
+    function toggleMenu() {
+        document.querySelector('.nav-wrapper').classList.toggle('active');
+    }
+    </script>
 </html>
