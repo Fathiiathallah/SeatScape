@@ -1,4 +1,4 @@
-/* --- CSS VARIABLES (Diambil dari about.css) --- */
+/* --- CSS VARIABLES --- */
 :root {
     --brand-brown: #73563F;
     --brand-brown-dark: #4A3525;
@@ -30,9 +30,6 @@
     background: var(--brand-brown); 
 }
 
-html {
-    scroll-behavior: smooth;
-}
 /* --- RESET DASAR --- */
 * {
     margin: 0;
@@ -203,12 +200,11 @@ html {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-
 /* --- HERO SECTION --- */
 .hero {
     margin-top: 60px; /* Ruang untuk navbar */
     height: 80vh; /* 80% dari tinggi layar */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/bg-landing-page.jpeg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Images/bg\ landing\ page.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -679,7 +675,6 @@ html {
     border-radius: 30px;
     font-weight: bold;
     font-size: 16px;
-    text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -694,7 +689,7 @@ html {
 /* --- REVIEWS SECTION WITH BACKGROUND --- */
 .reviews-section {
     position: relative;
-    background: url('../images/BG-review.jpeg') center/cover no-repeat;
+    background: url('image/BG review.jpg') center/cover no-repeat;
     padding: 0;
     overflow: hidden;
 }
@@ -732,32 +727,6 @@ html {
 .review-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
-}
-
-.btn-view-more {
-    background-color: #F5F5DC;
-    color: #614636;
-    border: none;
-    padding: 15px 45px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.btn-view-more:hover {
-    background-color: #e8e3cf;
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.reviews-overlay .btn-view-more {
-    margin-top: 40px; /* Sesuaikan angkanya buat ngatur seberapa turun buttonnya */
-    position: relative;
-    z-index: 10;
 }
 
 .review-header {
@@ -886,70 +855,94 @@ html {
     opacity: 0.7;
 }
 
+/* ========================= */
+/* RESPONSIVE NAVBAR MOBILE */
+/* ========================= */
 
-/* MOBILE RESPONSIVE FIX */
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-        .features {
-        padding: 30px 0;
+
+    /* HEADER */
+    .header {
+        padding: 12px 0;
     }
 
-    .features-title {
-        flex: unset;
-        width: 100%;
-    }
-
-    .features-container {
-        gap: 10px;
-    }
-
-    .features-grid {
-        margin-top: 0;
-    }
-
-    /* HERO */
-    .hero {
-        height: auto;
-        padding: 100px 20px 60px;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-        letter-spacing: 2px;
-    }
-
-    .btn-primary {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    /*  NAVBAR  */
     .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         flex-wrap: wrap;
-        gap: 10px;
+
+        padding: 0 20px;
     }
 
+    /* LOGO */
+    .logo {
+        order: 1;
+    }
+
+    /* USER ICON */
+    .user-icon {
+        order: 2;
+
+        margin-left: auto;
+        margin-right: 18px;
+    }
+
+    /* HAMBURGER */
     .menu-toggle {
+        order: 3;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 5px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+    /* NAVBAR */
+    .nav-wrapper {
+        order: 4;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+        padding-top: 25px;
+    }
+
+    /* ACTIVE MENU */
+    .nav-wrapper.active {
         display: flex;
     }
 
-    .nav-wrapper {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-    }
-
-    .nav-wrapper.active {
-        max-height: 300px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 1rem;
+    /* SEARCH */
+    .search-bar {
         width: 100%;
     }
 
@@ -961,28 +954,73 @@ html {
         width: 100%;
     }
 
-    /* FEATURES  */
+    /* LINKS */
+    .nav-links {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+
+        font-weight: 600;
+    }
+
+    /* HERO */
+    .hero {
+        height: 70vh;
+
+        padding: 0 20px;
+
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+
+        line-height: 1.2;
+
+        letter-spacing: 2px;
+    }
+
+    /* FEATURES */
     .features-container {
         flex-direction: column;
-        gap: 20px;
+
+        text-align: center;
     }
 
     .features-title h2 {
-        font-size: 24px;
         text-align: center;
+
+        font-size: 2rem;
     }
 
     .features-grid {
         grid-template-columns: 1fr;
     }
 
-    /* MENU  */
-    .menu-grid-container {
-        grid-template-columns: 1fr;
+    /* LIVE STATUS */
+    .status-column {
+        min-width: 100%;
     }
 
-    .menu-card-img {
-        height: 250px;
+    .main-stats {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    /* MENU */
+    .menu-grid-container {
+        grid-template-columns: 1fr;
     }
 
     /* REVIEWS */
@@ -993,61 +1031,21 @@ html {
     /* FOOTER */
     .footer-container {
         flex-direction: column;
+
         align-items: flex-start;
-        padding: 0 20px;
-        gap: 25px;
+
+        gap: 35px;
+
+        padding: 0 25px 35px;
     }
 
     .footer-column {
         width: 100%;
     }
 
-    /* urutan */
-    .footer-column:nth-child(1) {
-        order: 1;
-    }
+    .footer-bottom {
+        padding: 20px;
 
-    .footer-column:nth-child(2) {
-        order: 2;
-    }
-
-    .logo {
-        order: 1;
-    }
-
-    .user-icon {
-        order: 2;
-    }
-
-    .menu-toggle {
-        order: 3;
-    }
-}
-
-/* MOBILE INTERACTION FIX */
-.nav-links a:active,
-.user-icon a:active,
-.btn-primary:active {
-    transform: scale(0.95);
-    opacity: 0.8;
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
+        text-align: center;
     }
 }
