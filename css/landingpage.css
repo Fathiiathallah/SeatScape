@@ -943,6 +943,7 @@ html {
         flex-wrap: wrap;
         gap: 0;
         position: relative;
+        align-items: center;
     }
 
     /* Logo kiri, user-icon kanan, hamburger paling kanan */
@@ -954,6 +955,8 @@ html {
     .user-icon {
         order: 2;
         margin-right: 12px;
+        align-items: center;
+        justify-content: center;
     }
 
     .menu-toggle {
