@@ -937,6 +937,7 @@ html {
     /* ----- NAVBAR ----- */
     .header {
         padding: 10px 16px;
+        position: fixed;
     }
 
     .header-container {
@@ -954,10 +955,10 @@ html {
     }
 
     .user-icon {
-        position: absolute;
-        top: 46%;
+        position: fixed;
+        top: 38px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
         z-index: 1001;
     }
 
