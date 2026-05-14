@@ -21,7 +21,7 @@
             </div>
 
             <!-- HAMBURGER (TAMBAHKAN INI) -->
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -323,13 +323,13 @@
             }
         });
 
-        const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+        const mobileMenuIcon = document.querySelector('.menu-toggle');
         const navWrapper = document.querySelector('.nav-wrapper');
 
         mobileMenuIcon.addEventListener('click', () => {
-            // Baris ini akan menambah/menghapus class 'active' saat diklik
-            navWrapper.classList.toggle('active');
+        navWrapper.classList.toggle('active');
         });
+        
     </script>
 </body>
 </html>
