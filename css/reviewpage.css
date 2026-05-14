@@ -194,7 +194,7 @@ html, body {
 
 .review-hero {
     height: 570px;
-    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('../images/bg-hero-review.jpeg');
+    background: linear-gradient(rgba(97,70,54,0.72), rgba(97,70,54,0.72)), url('images/bg-hero-review.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -566,49 +566,229 @@ textarea {
     opacity: 0.7;
 }
 
-/* --- RESPONSIVE MOBILE  --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-    /* Sembunyikan teks menu dan search bar agar tidak menumpuk di atas */
-    .nav-links, 
-    .search-bar,
-    .nav-wrapper {
-        display: none !important;
+
+    /* HEADER MOBILE*/
+
+    .header {
+        padding: 12px 0;
     }
 
-    /* Pastikan container header hanya fokus pada Logo, User, dan Hamburger */
     .header-container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        height: 70px;
+        justify-content: space-between;
+
         padding: 0 20px;
     }
 
+    /* Urutan Mobile: Logo - Account - Hamburger */
+    .logo {
+        order: 1;
+    }
+
+    .user-icon {
+        order: 2;
+        margin-left: auto;
+        margin-right: 18px;
+    }
+
+    .menu-toggle {
+        order: 3;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+
+        background-color: white;
+
+        border-radius: 10px;
+
+        transition: 0.3s ease;
+    }
+
+    /* Hide Desktop Nav */
+    .nav-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        background: rgba(115, 86, 63, 0.97);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+
+        padding: 25px 20px;
+
+        z-index: 9999;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+        /* ANIMATION */
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    /* Active Hamburger Menu */
+    .nav-wrapper.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Search Bar Mobile */
+    .nav-wrapper.active .search-bar {
+        display: flex !important;
+
+        width: 100%;
+    }
+
+    .nav-wrapper.active .search-input {
+        width: 100%;
+    }
+
+    /* Nav Links Mobile */
+    .nav-wrapper.active .nav-links {
+        display: flex !important;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        width: 100%;
+    }
+
+    .nav-wrapper.active .nav-links a {
+        font-size: 1.1rem;
+        font-weight: 600;
+
+        color: white;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .user-icon {
+        order: 2;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .menu-toggle {
+        order: 3;
+        display: flex;
+    }
+
+    /* HERO MOBILE */
+
+    .review-hero {
+        height: 420px;
+
+        padding: 0 25px;
+    }
+
+    .review-hero h1 {
+        font-size: 3rem;
+        line-height: 1.15;
+    }
+
+    /*REVIEW GRID MOBILE*/
+
     .review-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .review-hero h1 { 
-        font-size: 2rem; 
-        padding: 0 15px;
+    .review-card {
+        padding: 24px;
     }
 
-    .action-bar { 
-        justify-content: center; 
+    .card-user {
+        align-items: flex-start;
+    }
+
+    .card-user img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .review-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /*BUTTON MOBILE*/
+
+    .action-bar {
+        justify-content: center;
         margin-bottom: 30px;
     }
 
+    .btn-write {
+        width: 100%;
+        justify-content: center;
+
+        font-size: 0.95rem;
+    }
+
+    /* MODAL MOBILE */
+
     .modal {
         padding: 20px 10px;
-        display: none;
         align-items: flex-start;
     }
 
     .modal-content {
         width: 95%;
         padding: 20px;
+
         margin: 10px auto;
+
         border-radius: 20px;
     }
 
@@ -617,36 +797,43 @@ textarea {
         margin-bottom: 15px;
     }
 
-    .form-group input, 
+    .form-group input,
     .form-group textarea {
         font-size: 16px;
     }
-}
 
-/* Bagian Dropdown Mobile yang Kamu Miliki Sebelumnya */
-.nav-wrapper.active {
-    display: flex !important;
-    flex-direction: column;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #73563f !important;
-    padding: 20px 0;
-    z-index: 9999;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
+    /*FOOTER MOBILE*/
 
-.nav-wrapper.active .nav-links {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
+    .footer-container {
+        flex-direction: column;
 
-.nav-wrapper.active .nav-links a {
-    color: white !important;
-    font-size: 1.2rem;
-    font-weight: bold;
+        align-items: flex-start;
+
+        gap: 35px;
+
+        padding: 0 25px 35px;
+    }
+
+    .footer-column {
+        width: 100%;
+
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+    .footer-item {
+        justify-content: flex-start;
+    }
+
+    .footer-title::after {
+        left: 0;
+        right: auto;
+    }
+
+    .footer-bottom {
+        padding: 20px;
+
+        text-align: center;
+    }
 }
