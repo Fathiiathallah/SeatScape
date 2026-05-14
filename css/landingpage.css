@@ -30,6 +30,9 @@
     background: var(--brand-brown); 
 }
 
+html {
+    scroll-behavior: smooth;
+}
 /* --- RESET DASAR --- */
 * {
     margin: 0;
@@ -200,11 +203,12 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+
 /* --- HERO SECTION --- */
 .hero {
     margin-top: 60px; /* Ruang untuk navbar */
     height: 80vh; /* 80% dari tinggi layar */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Images/bg\ landing\ page.jpeg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/bg-landing-page.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -366,7 +370,7 @@
     padding: 30px;
     border-radius: 20px;
     flex: 1;
-    min-width: 450px; /* Menjaga ukuran minimal di desktop */
+    min-width: 300px; /* Menjaga ukuran minimal di desktop */
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
@@ -675,6 +679,7 @@
     border-radius: 30px;
     font-weight: bold;
     font-size: 16px;
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -689,7 +694,7 @@
 /* --- REVIEWS SECTION WITH BACKGROUND --- */
 .reviews-section {
     position: relative;
-    background: url('image/BG review.jpg') center/cover no-repeat;
+    background: url('../images/BG-review.jpeg') center/cover no-repeat;
     padding: 0;
     overflow: hidden;
 }
@@ -727,6 +732,32 @@
 .review-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+.btn-view-more {
+    background-color: #F5F5DC;
+    color: #614636;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-view-more:hover {
+    background-color: #e8e3cf;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.reviews-overlay .btn-view-more {
+    margin-top: 40px; /* Sesuaikan angkanya buat ngatur seberapa turun buttonnya */
+    position: relative;
+    z-index: 10;
 }
 
 .review-header {
@@ -853,4 +884,266 @@
 
 .footer-link:hover {
     opacity: 0.7;
+}
+
+
+/* ============================================================
+   MOBILE HAMBURGER TOGGLE
+   ============================================================ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 4px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* MOBILE INTERACTION FIX */
+.nav-links a:active,
+.user-icon a:active,
+.btn-primary:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+/* ============================================================
+   TABLET (max-width: 992px)
+   ============================================================ */
+@media (max-width: 992px) {
+    .search-input {
+        width: 12rem;
+    }
+    .search-input:focus {
+        width: 18rem;
+    }
+    .nav-links {
+        gap: 1.5rem;
+    }
+}
+
+/* ============================================================
+   MOBILE (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* ----- NAVBAR ----- */
+    .header {
+        padding: 10px 16px;
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        gap: 0;
+        position: relative;
+    }
+
+    /* Logo kiri, user-icon kanan, hamburger paling kanan */
+    .logo {
+        order: 1;
+        flex: 1;
+    }
+
+    .user-icon {
+        order: 2;
+        margin-right: 12px;
+    }
+
+    .menu-toggle {
+        order: 3;
+        display: flex;
+    }
+
+    /* Nav wrapper jadi dropdown */
+    .nav-wrapper {
+        order: 4;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0;
+    }
+
+    .nav-wrapper.active {
+        max-height: 350px;
+        padding: 12px 0 8px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.4rem 0;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .search-input:focus {
+        width: 100%;
+    }
+
+    /* ----- HERO ----- */
+    .hero {
+        height: auto;
+        padding: 100px 20px 60px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .btn-view-more {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    /* ----- FEATURES ----- */
+    .features {
+        padding: 40px 0;
+    }
+
+    .features-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .features-title {
+        flex: unset;
+        width: 100%;
+    }
+
+    .features-title h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+
+    /* ----- LIVE STATUS ----- */
+    .live-status-section {
+        padding: 50px 16px;
+    }
+
+    .status-main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .status-column {
+        min-width: 100%;
+        padding: 20px;
+    }
+
+    .main-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .floor-legend-internal {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    /* ----- MENU SECTION ----- */
+    .menu-section {
+        padding: 50px 16px;
+    }
+
+    .section-title-white {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .menu-grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-card-img {
+        height: 240px;
+    }
+
+    /* ----- REVIEWS ----- */
+    .reviews-overlay {
+        padding: 50px 16px;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review-card {
+        max-width: 100%;
+    }
+
+    /* ----- FOOTER ----- */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+        gap: 25px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   SMALL MOBILE (max-width: 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .section-title-white {
+        font-size: 22px;
+    }
+
+    .menu-card-img {
+        height: 200px;
+    }
+
+    .review-card {
+        padding: 20px;
+    }
+
+    .reviewer-img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .footer-bottom p {
+        font-size: 11px;
+    }
 }
